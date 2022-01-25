@@ -27,6 +27,11 @@ const onFormSubmit = (e) => {
  
 } 
 
+const DelPerson = (id) => {
+   const personList = people.filter( person => person.id !== id)
+   setPeople(personList)
+}
+
 
   return (
 
@@ -68,7 +73,7 @@ const onFormSubmit = (e) => {
                 <div className='todo-list' key={id}>
                   <p>{firstName}</p>
                   <p>{lastName}</p>
-                  <button className='delete'>Delete</button>
+                  <button className='delete' onClick={()=>DelPerson(person.id)}>Delete</button>
                 </div>
                 
               )
